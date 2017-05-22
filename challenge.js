@@ -8,11 +8,10 @@
  */
 
 const currentSite = window.location.hostname;
-alert("current site: ", currentSite);
 
-if (currentSite === 'www.instagram.com'){
-  $('input[name=username]').attr('id', 'username');
-}
+// if (currentSite === 'www.instagram.com'){
+//   $('input[name=username]').attr('id', 'username');
+// }
 
 const siteIds = {
   "www.facebook.com": {
@@ -40,23 +39,21 @@ const siteIds = {
     password: "input[name=password]",
     submit: "._ah57t._84y62._i46jh._rmr7s"
   },
-
+  "login.yahoo.com": { //good
+    username: "#login-username",
+    password: "#login-passwd",
+    submit: "#login-signin"
+  }
 }
 
 function getUsernameField() {
-  // let id = sites[derp];
-  // if( email.length > 0){
-  //   return $("#email");
-  // }
   let query = siteIds[currentSite].username
-  alert("looking for "+ query);
 
   return $(query);
 }
 
 function getPasswordField() {
   let query = siteIds[currentSite].password;
-  alert("looking for "+ query);
 
   return $(query);
 }
@@ -67,14 +64,10 @@ function getFormField() {
 
 function getSubmitButton() {
   let query = siteIds[currentSite].submit;
-  alert("looking for "+ query);
 
   return $(query);
 }
 
-function hostName(url) { //keep host
- return url.slice(4,-4);
-}
 
 /**
  * Logs in into a website.
