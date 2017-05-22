@@ -13,7 +13,7 @@ const currentSite = window.location.hostname;
 //   $('input[name=username]').attr('id', 'username');
 // }
 
-const siteIds = {
+const siteFormQueries = {
   "www.facebook.com": {
     username: "#email",
     password: "#pass",
@@ -47,13 +47,13 @@ const siteIds = {
 }
 
 function getUsernameField() {
-  let query = siteIds[currentSite].username
+  let query = siteFormQueries[currentSite].username
 
   return $(query);
 }
 
 function getPasswordField() {
-  let query = siteIds[currentSite].password;
+  let query = siteFormQueries[currentSite].password;
 
   return $(query);
 }
@@ -63,7 +63,7 @@ function getFormField() {
 }
 
 function getSubmitButton() {
-  let query = siteIds[currentSite].submit;
+  let query = siteFormQueries[currentSite].submit;
 
   return $(query);
 }

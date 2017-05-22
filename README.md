@@ -1,3 +1,28 @@
+# Technical Explanation of Changes
+
+1. Use window.location to establish the host website
+2. Use an object to store the relationship betweeen each site and the necessary jQuery query necessary to find a specific DOM element
+3. In each getElement (usernameField,etc), lookup the appropriate string needed to find a given element. For instagram's username input field, "input[name=username]" is appropriate query parameter.
+
+# Next Steps: 
+
+1. Modularize this important data store that maintains the list of search terms for the relevent username and password inputs to either background scripts or more likely an http request to UnifyID servers to protect this proprietary information
+2. Create alternate sign-in procedures for logins that may contain an intermediate re-direct between entering username and password
+
+# Narrative
+
+Wow! That was pretty cool! That's my first time touching a chrome extension so just diagraming out the different file's methods for interacting with each other through chrome.runtime or chrome.tabs apis was pretty cool.
+
+Obviously this implementation I was able to get done feels a little flimsy saying if a site were to change their HTML I have no catches in place try other ways of finding a given input should the #ID's change, but all the same it was fun to fool around with the login procedures for major sites I use daily. Powerful!
+
+I'd be really pumped to learn more about how this scales into a robust production implementation!
+
+
+
+
+
+
+
 The challenge is to be able to do the following actions in a given website:
  * Trigger form submit with a pair of credentials.
  * Find the form elements in the dom.
