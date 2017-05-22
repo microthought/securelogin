@@ -1,0 +1,83 @@
+
+
+######################
+##     facebook    ##
+######################
+
+Username: input type="email"
+  id: email
+
+Password: input type="password"
+  id: pass
+
+Submit: input type="submit"
+  id: "u_0_q"
+
+Form:
+  id: "login_form"
+
+######################
+##    citi.com      ##
+######################
+
+Username: input type ="text"
+  id: username
+  (id: usernameMasked)   <- decoy?
+
+Password: input type="password"
+  id: password
+
+Submit: input type="button"
+  id: signInBtn
+  trigger: jQuery on username, pw, submit listening for keycode 13 or button click
+
+
+
+
+######################
+##    paypal.com    ##
+######################
+
+Username: input type="email"
+  id: email
+
+Password: input type="password"
+  id: password
+
+Submit: button type="submit"
+  id: btnLogin
+
+
+
+
+###############################
+##      bankofamerica.com    ##
+###############################
+
+Username: input type="text"
+  id: onlineId1
+
+Password: input type="password"
+  id: passcode1
+
+Submit: button type="??"
+  id: hp-sign-in-btn
+
+
+
+
+###########################
+##      instagram.com    ##
+###########################
+
+Username: input type="text"
+  id: onlineId1
+
+Password: input type="password"
+  id: passcode1
+
+Submit: button type="??"
+  id: hp-sign-in-btn
+
+Form:
+  class="_rwf8p"

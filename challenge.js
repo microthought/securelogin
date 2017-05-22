@@ -6,12 +6,59 @@
  * Some utility functions that may or may not be useful.
  * Feel free to modify these.
  */
+
+const currentSite = window.location.hostname;
+alert("current site: ", currentSite);
+
+if (currentSite === 'www.instagram.com'){
+  $('input[name=username]').attr('id', 'username');
+}
+
+const siteIds = {
+  "www.facebook.com": {
+    username: "#email",
+    password: "#pass",
+    submit: "#loginbutton"
+  },
+  "www.paypal.com": { //good
+    username: "#email",
+    password: "#password",
+    submit: "#btnLogin"
+  },
+  "online.citi.com": { //works, but challenge.js runs ~10x. Why?
+    username: "#username",
+    password: "#password",
+    submit: "#signInBtn"
+  },
+  "www.bankofamerica.com": { //works, but challenge.js runs ~10x. Why?
+    username: "#onlineId1",
+    password: "#passcode1",
+    submit: "#hp-sign-in-btn"
+  },
+  "www.instagram.com": { //good
+    username: "input[name=username]",
+    password: "input[name=password]",
+    submit: "._ah57t._84y62._i46jh._rmr7s"
+  },
+
+}
+
 function getUsernameField() {
-  return $("#email");
+  // let id = sites[derp];
+  // if( email.length > 0){
+  //   return $("#email");
+  // }
+  let query = siteIds[currentSite].username
+  alert("looking for "+ query);
+
+  return $(query);
 }
 
 function getPasswordField() {
-  return $("#pass");
+  let query = siteIds[currentSite].password;
+  alert("looking for "+ query);
+
+  return $(query);
 }
 
 function getFormField() {
@@ -19,7 +66,14 @@ function getFormField() {
 }
 
 function getSubmitButton() {
-  return $("#loginbutton");
+  let query = siteIds[currentSite].submit;
+  alert("looking for "+ query);
+
+  return $(query);
+}
+
+function hostName(url) { //keep host
+ return url.slice(4,-4);
 }
 
 /**
